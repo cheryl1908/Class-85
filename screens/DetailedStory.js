@@ -13,6 +13,7 @@ import {
 } from "react-native";
 import { RFValue } from "react-native-responsive-fontsize";
 import StoryCard from "./StoryCard";
+import Ionicons from "react-native-vector-icons/Ionicons";
 import * as Speech from "expo-speech";
 import AppLoading from "expo-app-loading";
 import * as Font from "expo-font";
@@ -57,7 +58,7 @@ let customFonts = {
         if (!this.state.fontsLoaded) {
           return <AppLoading />;
         } else if(!this.props.route.params){
-            this.props.naviagtion.navigate("Home")
+            this.props.navigation.navigate("Home")
         } else {
           return (
             <View style={styles.container}>
@@ -91,8 +92,8 @@ let customFonts = {
                             </View>
                         </View>
                         <View style={styles.storyTextContainer}>
-                            <Text style={styles.storyText}>{this.props.rote.params.story.story}</Text>
-                            <Text style={styles.moralText}>Moral:- {this.props.rote.params.story.moral}</Text>
+                            <Text style={styles.storyText}>{this.props.route.params.story.story}</Text>
+                            <Text style={styles.moralText}>Moral:- {this.props.route.params.story.moral}</Text>
                         </View>
                         <View style={styles.actionContainer}>
                             <View style={styles.likeButton}>

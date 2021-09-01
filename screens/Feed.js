@@ -27,7 +27,7 @@ export default class Feed extends React.Component{
         })
     }
     renderItem=({item:story})=>{
-        return <StoryCard story={story}/> 
+        return <StoryCard story={story} navigation={this.props.navigation}/> 
      }
     render(){
         if(!this.state.fontLoaded){
